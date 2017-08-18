@@ -11,35 +11,37 @@ import { Component } from '@angular/core';
     </ul>
     <hr>
     <div>
-      <h3>{{selectedAnimal.species}}</h3>
-      <h3>Edit Animal</h3>
-      <label>Enter Animal Species:</label>
-      <input [(ngModel)]="selectedAnimal.species">
-      <br>
-      <label>Enter Animal Name:</label>
-      <input [(ngModel)]="selectedAnimal.name">
-      <br>
-      <label>Enter Animal Age:</label>
-      <input [(ngModel)]="selectedAnimal.age">
-      <br>
-      <label>Enter Animal Diet:</label>
-      <input [(ngModel)]="selectedAnimal.diet">
-      <br>
-      <label>Enter Animal Location:</label>
-      <input [(ngModel)]="selectedAnimal.location">
-      <br>
-      <label>Enter Number of Caretakers:</label>
-      <input [(ngModel)]="selectedAnimal.caretakers">
-      <br>
-      <label>Enter Animal Sex:</label>
-      <input [(ngModel)]="selectedAnimal.sex">
-      <br>
-      <label>Enter One Item the Animal Likes:</label>
-      <input [(ngModel)]="selectedAnimal.like">
-      <br>
-      <label>Enter One Item the Animal Dislikes:</label>
-      <input [(ngModel)]="selectedAnimal.dislike">
-      <br>
+      <div *ngIf="selectedAnimal">
+        <h3>{{selectedAnimal.species}}</h3>
+        <h3>Edit Animal</h3>
+        <label>Enter Animal Species:</label>
+        <input [(ngModel)]="selectedAnimal.species">
+        <br>
+        <label>Enter Animal Name:</label>
+        <input [(ngModel)]="selectedAnimal.name">
+        <br>
+        <label>Enter Animal Age:</label>
+        <input [(ngModel)]="selectedAnimal.age">
+        <br>
+        <label>Enter Animal Diet:</label>
+        <input [(ngModel)]="selectedAnimal.diet">
+        <br>
+        <label>Enter Animal Location:</label>
+        <input [(ngModel)]="selectedAnimal.location">
+        <br>
+        <label>Enter Number of Caretakers:</label>
+        <input [(ngModel)]="selectedAnimal.caretakers">
+        <br>
+        <label>Enter Animal Sex:</label>
+        <input [(ngModel)]="selectedAnimal.sex">
+        <br>
+        <label>Enter One Item the Animal Likes:</label>
+        <input [(ngModel)]="selectedAnimal.like">
+        <br>
+        <label>Enter One Item the Animal Dislikes:</label>
+        <input [(ngModel)]="selectedAnimal.dislike">
+        <button (click)="finishedEditing()">Done</button>
+      </div>
     </div>
   </div>
   `
@@ -51,10 +53,14 @@ export class AppComponent {
     new Animal('Ocelot', 'Prince', 4, 'Carnivore', 'Tropical Rain Forest Building', 6, 'Male', 'Laying in the sunshine', 'Toys that are not rope-based'),
     new Animal('Northwest Black Tailed Deer', 'Tinkerbell', 8, 'Herbivore', 'Northern Trail', 2, 'Female', 'Delicate roots and leaves', 'Loud Noises')
   ];
-  selectedAnimal: Animal = this.animals[0];
+  selectedAnimal = null;
 
   editAnimal(clickedAnimal) {
     this.selectedAnimal = clickedAnimal;
+  }
+
+  finishedEditing() {
+    this.selectedAnimal = null;
   }
 }
 
