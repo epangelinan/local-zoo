@@ -28,10 +28,11 @@ _As a user:_
 
 ## Additional Functionality that Could be Included in the Future
 * _Add a feature to delete an Animal_
-* _Add a Date field indicating the date the animal was entered into the system.
-* _Add a feature to list/filter the animals that have died, containing the age they died and cause of death_
+* _Add a feature to list/filter the animals that are sick or have died.  If they died, indicate the date of death, age and cause of death_
 * _Add a feature to list the total number of animals in the zoo_
 * _Update the Sex input field to be selector or options containing Male / Female_
+* _Add feeding times for the animals_
+
 
 ## Known Bugs
 
