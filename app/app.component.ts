@@ -5,7 +5,7 @@ import { Animal } from './animal.model';
   selector: 'app-root',
   template: `
   <div class="container">
-    <h1>Local Zoo</h1>
+    <h1>Local Zoo  {{month}}/{{day}}/{{year}}</h1>
     <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
     <hr>
     <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
@@ -15,6 +15,11 @@ import { Animal } from './animal.model';
 })
 
 export class AppComponent {
+  currentTime = new Date();
+  month: number = this.currentTime.getMonth() + 1;
+  day: number = this.currentTime.getDate();
+  year: number = this.currentTime.getFullYear();
+
   selectedAnimal = null;
 
   masterAnimalList: Animal[] = [
