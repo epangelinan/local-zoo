@@ -26,7 +26,7 @@ _As a user:_
 * _I want options to view all animals, only young animals (less than 2 years of age), or only mature animals (2 years of age and older)_
 * _I want to click an animal to edit its name, age or caretakers_
 
-##Additional Functionality that Could be Included in the Future
+## Additional Functionality that Could be Included in the Future
 * _Add a feature to delete an Animal_
 * _Add a Date field indicating the date the animal was entered into the system.
 * _Add a feature to list/filter the animals that have died, containing the age they died and cause of death_
